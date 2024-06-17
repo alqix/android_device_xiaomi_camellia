@@ -75,6 +75,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+# Qpr2 Patches
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/libs/bin/bpfloader:$(TARGET_COPY_OUT_SYSTEM)/bin/bpfloader \
+    $(LOCAL_PATH)/libs/etc/init/bpfloader.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/bpfloader.rc \
+    $(LOCAL_PATH)/libs/lib64/libbpf_android.so:$(TARGET_COPY_OUT_SYSTEM)/li64/libbpf_android.so \
+    $(LOCAL_PATH)/libs/lib64/libbpf_bcc.so:$(TARGET_COPY_OUT_SYSTEM)/li64/libbpf_bcc.so \
+    $(LOCAL_PATH)/libs/lib64/libbpf_minimal.so:$(TARGET_COPY_OUT_SYSTEM)/li64/libbpf_minimal.so
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
