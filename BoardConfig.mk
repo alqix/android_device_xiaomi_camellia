@@ -81,9 +81,6 @@ BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 TARGET_KERNEL_CONFIG := camellia_user_defconfig
 TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/kernel-headers
 
-# NFC
-ODM_MANIFEST_SKUS += nfc
-ODM_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml
 
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := camellia,camellian
