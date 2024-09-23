@@ -37,7 +37,7 @@ $(VENDOR_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 $(QPR2_PATCHES): $(LOCAL_INSTALLED_MODULE)
 	$(hide) echo "Installing QPR2 Patches"
 	@mkdir -p $(TARGET_OUT_VENDOR)/lib64
-	@mdkir -p $(TARGET_OUT_VENDOR)/bin
+	@mkdir -p $(TARGET_OUT_VENDOR)/bin
 	@mkdir -p $(TARGET_OUT_VENDOR)/etc
 	@mkdir -p $(TARGET_OUT_VENDOR)/etc/init
 	@rm -rf $(TARGET_OUT_SYSTEM)/lib64/libbpf_android.so
@@ -46,7 +46,7 @@ $(QPR2_PATCHES): $(LOCAL_INSTALLED_MODULE)
 	@rm -rf $(TARGET_OUT_SYSTEM)/bin/bpfloader
 	@rm -rf $(TARGET_OUT_SYSTEM)/etc/init/bpfloader.rc
 	@rm -rf $(TARGET_OUT_SYSTEM)/etc/init/netbpfload.rc
-	@cp -r $(DEVICE_PATH)/libs/* $(TARGET_OUT_SYSTEM)/
+	@cp -r $(DEVICE_PATH)/libs/* $(TARGET_OUT_SYSTEM)
 	$(hide) touch $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(VENDOR_SYMLINKS) $(QPR2_PATCHES)
